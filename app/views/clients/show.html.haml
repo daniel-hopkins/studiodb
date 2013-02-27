@@ -1,0 +1,16 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @client.name
+%h3
+  List of Jobs for
+  = @client.name
+%ul
+  - @client.jobs.each do |j|
+    %li= link_to j.name, j
+
+
+= link_to 'Edit', edit_client_path(@client)
+\|
+= link_to 'Back', clients_path
