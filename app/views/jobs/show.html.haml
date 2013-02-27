@@ -1,0 +1,32 @@
+%p#notice= notice
+%p
+  %b Client
+  / = @job.client.name
+%p
+  %b Name:
+  = @job.name
+%p
+  %b Date:
+  = @job.date
+%p
+  %b Notes:
+  = @job.notes
+%p
+  %b Invoiced:
+  = @job.invoiced
+%p
+  %b Invoicenumber:
+  = @job.invoicenumber
+%p
+  %b Tifhd:
+  = @job.tifhd
+%p
+  %b Rawhd:
+  = @job.rawhd
+%p
+  %b Public:
+  = @job.public
+
+= link_to 'Edit', edit_job_path(@job)
+\|
+= link_to 'Back', jobs_path

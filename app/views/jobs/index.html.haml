@@ -1,0 +1,33 @@
+%h1 Listing jobs
+
+%table
+  %tr
+    %th Name
+    %th Date
+    %th Notes
+    %th Invoiced
+    %th Invoicenumber
+    %th Tifhd
+    %th Rawhd
+    %th Public
+    %th
+    %th
+    %th
+
+  - @jobs.each do |job|
+    %tr
+      %td= job.name
+      %td= job.date
+      %td= job.notes
+      %td= job.invoiced
+      %td= job.invoicenumber
+      %td= job.tifhd
+      %td= job.rawhd
+      %td= job.public
+      %td= link_to 'Show', job
+      %td= link_to 'Edit', edit_job_path(job)
+      %td= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Job', new_job_path
