@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: MyString
+  description: MyString
+  tonalrange: MyString
+  graduationcurve: MyString
+  lens: MyString
+  height: MyString
+  notes: MyText
+  printed: false
+
+two:
+  date: MyString
+  description: MyString
+  tonalrange: MyString
+  graduationcurve: MyString
+  lens: MyString
+  height: MyString
+  notes: MyText
+  printed: false

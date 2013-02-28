@@ -1,0 +1,33 @@
+%h1 Listing shots
+
+%table
+  %tr
+    %th Date
+    %th Description
+    %th Tonalrange
+    %th Graduationcurve
+    %th Lens
+    %th Height
+    %th Notes
+    %th Printed
+    %th
+    %th
+    %th
+
+  - @shots.each do |shot|
+    %tr
+      %td= shot.date
+      %td= shot.description
+      %td= shot.tonalrange
+      %td= shot.graduationcurve
+      %td= shot.lens
+      %td= shot.height
+      %td= shot.notes
+      %td= shot.printed
+      %td= link_to 'Show', shot
+      %td= link_to 'Edit', edit_shot_path(shot)
+      %td= link_to 'Destroy', shot, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Shot', new_shot_path

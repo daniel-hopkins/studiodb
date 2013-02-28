@@ -1,4 +1,6 @@
 Studiodb::Application.routes.draw do
+  resources :shots
+
   resources :jobs
 
   resources :clients

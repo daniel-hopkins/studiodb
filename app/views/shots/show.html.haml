@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Date:
+  = @shot.date
+%p
+  %b Description:
+  = @shot.description
+%p
+  %b Tonalrange:
+  = @shot.tonalrange
+%p
+  %b Graduationcurve:
+  = @shot.graduationcurve
+%p
+  %b Lens:
+  = @shot.lens
+%p
+  %b Height:
+  = @shot.height
+%p
+  %b Notes:
+  = @shot.notes
+%p
+  %b Printed:
+  = @shot.printed
+
+= link_to 'Edit', edit_shot_path(@shot)
+\|
+= link_to 'Back', shots_path
