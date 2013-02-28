@@ -25,7 +25,9 @@ gem 'compass-rails'
 gem 'bootstrap-sass', '~> 2.3.0.0'
 gem 'haml', '>= 3.0.0'
 gem 'haml-rails'
-gem 'paperclip'
+# gem 'paperclip'
+gem 'rmagick'
+gem 'carrierwave'
 
 gem 'thin'
 
