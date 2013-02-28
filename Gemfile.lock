@@ -32,11 +32,10 @@ GEM
     bootstrap-sass (2.3.0.0)
       sass (~> 3.2)
     builder (3.0.4)
+    carrierwave (0.8.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
     chunky_png (1.2.6)
-    climate_control (0.0.3)
-      activesupport (>= 3.0)
-    cocaine (0.5.1)
-      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -79,12 +78,6 @@ GEM
     mime-types (1.21)
     multi_json (1.6.1)
     mysql2 (0.3.11)
-    paperclip (3.4.1)
-      activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.5.0)
-      mime-types
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -111,6 +104,7 @@ GEM
     rake (10.0.3)
     rdoc (3.12.1)
       json (~> 1.4)
+    rmagick (2.13.2)
     sass (3.2.5)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -139,6 +133,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 2.3.0.0)
+  carrierwave
   coffee-rails (~> 3.2.1)
   compass-rails
   haml (>= 3.0.0)
@@ -146,8 +141,8 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mysql2
-  paperclip
   rails (= 3.2.8)
+  rmagick
   sass-rails (~> 3.2.3)
   thin
   uglifier (>= 1.0.3)
