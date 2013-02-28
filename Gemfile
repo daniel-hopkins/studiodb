@@ -23,10 +23,11 @@ end
 gem 'jquery-rails'
 gem 'compass-rails'
 gem 'bootstrap-sass', '~> 2.3.0.0'
-gem "haml", ">= 3.0.0"
-gem "haml-rails"
+gem 'haml', '>= 3.0.0'
+gem 'haml-rails'
+gem 'paperclip'
 
-gem "thin"
+gem 'thin'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
