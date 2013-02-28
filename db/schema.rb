@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228023851) do
+ActiveRecord::Schema.define(:version => 20130228210810) do
 
   create_table "clients", :force => true do |t|
     t.string   "name"
@@ -28,14 +28,24 @@ ActiveRecord::Schema.define(:version => 20130228023851) do
     t.string   "tifhd"
     t.string   "rawhd"
     t.boolean  "public"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.integer  "client_id"
     t.string   "folder"
-    t.string   "thumbnail_file_name"
-    t.string   "thumbnail_content_type"
-    t.integer  "thumbnail_file_size"
-    t.datetime "thumbnail_updated_at"
+    t.string   "thumbnail"
+  end
+
+  create_table "shots", :force => true do |t|
+    t.string   "date"
+    t.string   "description"
+    t.string   "tonalrange"
+    t.string   "graduationcurve"
+    t.string   "lens"
+    t.string   "height"
+    t.text     "notes"
+    t.boolean  "printed"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end
