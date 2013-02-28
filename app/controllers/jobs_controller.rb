@@ -2,7 +2,7 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.order('date DESC').page(params[:page])
+    @jobs = Job.order('date DESC').page(params[:page]).per(10)
 
     respond_to do |format|
       format.html # index.html.erb
