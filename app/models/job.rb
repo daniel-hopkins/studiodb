@@ -3,7 +3,9 @@ class Job < ActiveRecord::Base
 
   belongs_to :client
 
-  has_attached_file :thumbnail, :styles => {:original => '150x150>'},
-                    :url => "/assets/jobs/job_thumbnails/:id.:extension",
-                    :path => ":rails_root/public/assets/jobs/job_thumbnails/:id.:extension"
+  mount_uploader :thumbnail, JobThumbnailUploader
+
+  # has_attached_file :thumbnail, :styles => {:original => '150x150>'},
+  #                   :url => "/assets/jobs/job_thumbnails/:id.:extension",
+  #                   :path => ":rails_root/public/assets/jobs/job_thumbnails/:id.:extension"
 end
