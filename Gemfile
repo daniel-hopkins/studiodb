@@ -22,7 +22,7 @@ end
 
 gem 'jquery-rails'
 gem 'compass-rails'
-gem 'bootstrap-sass', '~> 2.3.0.0'
+gem 'bootstrap-sass', '~> 2.3.0.1'
 gem 'haml', '>= 3.0.0'
 gem 'haml-rails'
 gem 'kaminari'
