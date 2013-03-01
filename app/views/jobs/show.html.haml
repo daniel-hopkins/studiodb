@@ -29,6 +29,12 @@
   %b Public:
   = @job.public
 
+%p
+  %h3 shots in this job
+  %ul
+    - @job.shots.each do |shot|
+      %li=shot.description
+
 = link_to 'Edit', edit_job_path(@job)
 \|
 = link_to 'Back', jobs_path

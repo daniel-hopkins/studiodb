@@ -3,6 +3,8 @@ class Job < ActiveRecord::Base
 
   belongs_to :client
 
+  has_many :shots
+
   mount_uploader :thumbnail, JobThumbnailUploader
 
   # has_attached_file :thumbnail, :styles => {:original => '150x150>'},
