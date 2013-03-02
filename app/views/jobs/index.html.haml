@@ -1,15 +1,16 @@
 %h1 Listing jobs
 
-%table
+%table.table.table-striped.table-bordered
   %tr
     %th Name
     %th Date
-    %th Notes
+    / %th Notes
     %th Invoiced
-    %th Invoicenumber
+    / %th Invoicenumber
     %th Tifhd
     %th Rawhd
-    %th Public
+    / %th Public
+    %th
     %th
     %th
     %th
@@ -18,15 +19,17 @@
     %tr
       %td= job.name
       %td= job.date
-      %td= job.notes
+      / %td= job.notes
       %td= job.invoiced
-      %td= job.invoicenumber
+      / %td= job.invoicenumber
       %td= job.tifhd
       %td= job.rawhd
-      %td= job.public
-      %td= link_to 'Show', job
+      / %td= job.public
+      %td= link_to 'New Shot', new_shot_path(job_id: job.id)
+      %td= link_to 'View Shots', {controller: 'shots', job_id: job.id}
+      / %td= link_to 'Show', job
       %td= link_to 'Edit', edit_job_path(job)
-      %td= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 = paginate @jobs

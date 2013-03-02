@@ -1,14 +1,19 @@
 class ShotsController < ApplicationController
   # GET /shots
   # GET /shots.json
+
+  before_filter :find_job
+
+
   def index
-    @shots = Shot.all
+    @shots = Shot.order("shots.date DESC").where(:job_id => @job_id)
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @shots }
+      format.html # show.html.erb
+      format.json { render json: @shot }
     end
   end
+
 
   # GET /shots/1
   # GET /shots/1.json
@@ -24,7 +29,7 @@ class ShotsController < ApplicationController
   # GET /shots/new
   # GET /shots/new.json
   def new
-    @shot = Shot.new
+    @shot = Shot.new(:job_id => @job_id)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -46,6 +51,7 @@ class ShotsController < ApplicationController
       if @shot.save
         format.html { redirect_to @shot, notice: 'Shot was successfully created.' }
         format.json { render json: @shot, status: :created, location: @shot }
+        redirect_to(:action => 'index', :job_id => @shot.job_id)
       else
         format.html { render action: "new" }
         format.json { render json: @shot.errors, status: :unprocessable_entity }
@@ -62,6 +68,7 @@ class ShotsController < ApplicationController
       if @shot.update_attributes(params[:shot])
         format.html { redirect_to @shot, notice: 'Shot was successfully updated.' }
         format.json { head :no_content }
+        redirect_to(:action => 'index', :job_id => @shot.job_id)
       else
         format.html { render action: "edit" }
         format.json { render json: @shot.errors, status: :unprocessable_entity }
@@ -74,10 +81,18 @@ class ShotsController < ApplicationController
   def destroy
     @shot = Shot.find(params[:id])
     @shot.destroy
+    redirect_to(:action => 'index', :job_id => @job.id)
 
     respond_to do |format|
       format.html { redirect_to shots_url }
       format.json { head :no_content }
+    end
+  end
+
+  private
+  def find_job
+    if params[:job_id]
+      @job = Job.find_by_id(params[:job_id])
     end
   end
 end

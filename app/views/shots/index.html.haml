@@ -14,7 +14,7 @@
     %th
     %th
 
-  - @shots.each do |shot|
+  - @job.shots.each do |shot|
     %tr
       %td= shot.date
       %td= shot.description
@@ -30,4 +30,4 @@
 
 %br
 
-= link_to 'New Shot', new_shot_path
+= link_to 'New Shot', new_shot_path(job_id: @job.id)

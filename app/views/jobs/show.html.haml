@@ -1,4 +1,6 @@
 %p#notice= notice
+%h4 New Shot
+=link_to 'new shot', new_shot_path(:job_id=> @job.id)
 %p
   %b Client
   = @job.client.name
@@ -33,7 +35,7 @@
   %h3 shots in this job
   %ul
     - @job.shots.each do |shot|
-      %li=shot.description
+      %li=link_to shot.description, shot
 
 = link_to 'Edit', edit_job_path(@job)
 \|
