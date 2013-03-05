@@ -20,7 +20,7 @@ jQuery ->
   minutes = currentTime.getMinutes()
   if minutes < 10
     minutes = "0" + minutes
-  console.log(hours + ":" + minutes + " ")
+  # console.log(hours + ":" + minutes + " ")
   fullDate = year + "-" + month + "-" + day + " " + dayOfWeek + " " + hours + ":" + minutes + " "
   if hours > 11 
     fullDate += "PM"

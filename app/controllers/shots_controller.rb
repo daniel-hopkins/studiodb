@@ -45,18 +45,18 @@ class ShotsController < ApplicationController
   # POST /shots
   # POST /shots.json
   def create
-    @shot = Shot.new(params[:shot])
+    @shot = Shot.create(params[:shot])
 
-    respond_to do |format|
-      if @shot.save
-        format.html { redirect_to @shot, notice: 'Shot was successfully created.' }
-        format.json { render json: @shot, status: :created, location: @shot }
-        redirect_to(:action => 'index', :job_id => @shot.job_id)
-      else
-        format.html { render action: "new" }
-        format.json { render json: @shot.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @shot.save
+    #     format.html { redirect_to @shot.job, action: 'list', :job_id => @shot.job_id, notice: 'Shot was successfully created.' }
+    #     format.json { render json: @shot, status: :created, location: @shot }
+    #     # redirect_to(:action => 'index', :job_id => @shot.job_id)
+    #   else
+    #     format.html { render action: "new" }
+    #     format.json { render json: @shot.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PUT /shots/1

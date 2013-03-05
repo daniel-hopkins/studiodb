@@ -1,5 +1,5 @@
 %p#notice= notice
-%h4 New Shot
+%h4=@job.name
 =link_to 'new shot', new_shot_path(:job_id=> @job.id)
 %p
   %b Client
@@ -33,9 +33,22 @@
 
 %p
   %h3 shots in this job
-  %ul
+  %ul#shots.thumbnails
     - @job.shots.each do |shot|
-      %li=link_to shot.description, shot
+      %li.thumbnail
+        =image_tag shot.image_url.to_s
+
+= form_for Shot.new do |f|
+  = f.hidden_field :job_id , :value => @job.id
+  = f.label :image, "Upload images:"
+  = f.file_field :image, multiple: true, name: "shot[image]"
+
+<script id="template-upload" type="text/x-tmpl">
+<div class="upload">
+{%=o.name%}
+<div class="progress"><div class="bar" style="width: 0%"></div></div>
+</div>
+</script>
 
 = link_to 'Edit', edit_job_path(@job)
 \|

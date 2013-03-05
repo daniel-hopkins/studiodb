@@ -2,6 +2,8 @@
 
 %h4=link_to @shot.job.name, @shot.job
 
+=image_tag @shot.image_url.to_s
+
 %p
   %b Date:
   = @shot.date
