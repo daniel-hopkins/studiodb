@@ -18,9 +18,10 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'jquery-fileupload-rails'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '2.1.4'
 gem 'jquery-ui-rails'
 gem 'compass-rails'
 gem 'bootstrap-sass', '~> 2.3.0.1'
