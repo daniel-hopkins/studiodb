@@ -1,0 +1,7 @@
+.shot
+  = link_to image_tag(shot.image_url), shot if shot.image?
+  .name= shot.description
+  .actions
+    = link_to "edit", edit_shot_path(shot)
+    |
+    \#{link_to "remove", shot, :confirm => 'Are you sure?', :method => :delete}

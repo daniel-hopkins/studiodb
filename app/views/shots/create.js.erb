@@ -1,6 +1,6 @@
 <% if @shot.new_record? %>
   alert("Failed to upload shot: <%= j @shot.errors.full_messages.join(', ').html_safe %>");
 <% else %>
-  console.log(@shot)
+  // console.log(@shot);
   $("#shots").append("<%= j render(@shot) %>");
 <% end %>
